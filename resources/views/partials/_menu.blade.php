@@ -62,5 +62,6 @@
        <input style="min-width:21em;" name="search" value="" class="form-control mr-sm-2" type="text" placeholder="Search article or search by user name" aria-label="Search">
        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
      </form>
+      <span id="dark-mode" onclick="darkModeTrigger()">dark</span>
    </div>
  </nav><!--and of navbar-->

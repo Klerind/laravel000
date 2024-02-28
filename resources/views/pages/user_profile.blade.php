@@ -38,7 +38,7 @@
            <div class="left">
                <span class="user_image"><img width="38" src=" <?php echo asset('albill.png'); ?>" alt="image" /></span>
            </div>
-           <div class="right">na
+           <div class="right">
                <div><span><?php echo $user->name; ?>&nbsp;@<?php echo str_replace(' ', '', $user->name); ?></span></div>
            <div>
             <?php if(!is_null($user->role)){ ?>
