@@ -20,7 +20,7 @@ class PagesController extends Controller
 {
 
   public function getHome()
-  {dd(9);
+  {
     $fields = UserFormFieldController::show();
     $fields_content = ContentController::getContentsForHomePage();
 
@@ -30,18 +30,15 @@ class PagesController extends Controller
     {
       $posts[$item['content_link']][$key] = $item; //dump($item['content_link']);
     }
-
-    //ksort($posts, SORT_NUMERIC);
-//dd($posts);
+ 
     $products = array();
 
     foreach ($fields_content['fields_content'] as $key => $item)
     {
       $products[$item['content_link']][$key] = $item;
     }
-
-    //ksort($products, SORT_NUMERIC);
-   // dd($fields_content['contents']);
+    
+    
     return view('pages/welcome',[
            'fields' => $fields,
            'contents' => $fields_content['contents'],
@@ -60,14 +57,12 @@ class PagesController extends Controller
   }
 
   public  function getContact()
-  {
-  //  Mail::to('laravelmail@lara000.in')->send(new SendMail());
+  { 
     return view('pages/contact');
   }
 
   public  function sendMail()
-  {
-  //  Mail::to('laravelmail@lara000.in')->send(new SendMail());
+  { 
     return view('pages/contact');
   }
 
