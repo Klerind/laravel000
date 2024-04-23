@@ -11,10 +11,22 @@ class UserController extends Controller
 {
   public static function show(Request $request)
   { 
+    $user_id = intval($request->input()['user_id']);
+      
+    if ($user_id <= 0) 
+    { 
+        return redirect('/')->with('status', 'You can not use that user id!');
+    }
+    
     $user = User::where(
-       ['id' => $request->input()['user_id']]
+       ['id' => $user_id]
     )->get()->first();  
-     
+     //dd($user);
+    if (is_null($user)) 
+    { 
+        return redirect('/')->with('status', 'This user is not in database!');
+    }
+    
     return view('pages/user_profile', ['user' => $user]);
   }
   

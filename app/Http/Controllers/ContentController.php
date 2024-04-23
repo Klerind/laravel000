@@ -97,8 +97,14 @@ class ContentController extends Controller
   }
   
   public static function showArticle(Request $request)
-  {  
-    $content_link_id = $request->input()['content_link'];
+  {   
+    $content_link_id = intval($request->input()['content_link']); 
+    
+    if ($content_link_id <= 0) 
+    { 
+        return redirect('/')->with('status', 'You can not use that article id!');
+    }
+    
     $fields = $field_group_post = $field_group_product = [];
     $fields_content = Content::select('*')
         ->where(['content_link' => $content_link_id])
