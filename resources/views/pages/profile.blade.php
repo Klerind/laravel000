@@ -12,6 +12,11 @@
  <div class="row">
    <div class="col-md-12">
         <h2>Profile</h2>
+         <?php if (session()->get('status') != null): ?>
+     <div class="alert alert-success" role="alert">
+       <?php echo session()->get('status'); ?>
+     </div>
+    <?php endif; ?>
         <a
            href='/test'
            type="button"
@@ -250,7 +255,7 @@
      <form action="/profile/createWidget" method="get">  @csrf
        <div class="modal-body">
         <div id="product_fields_form" onsubmit="return handleFildForm(event)">
-          <input type="text" name="widget_name" value="" placeholder="Widget name">
+            <input type="text" name="widget_name" value="" placeholder="Widget name" required>
           <input type="hidden" name="field_group_id" value="0">
         </div>
       </div>

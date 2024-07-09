@@ -12,22 +12,25 @@
              <div class="card-body p-5 text-center">
                <div class="mb-md-5 mt-md-4 pb-5">
                  <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-                 <p class="text-white-50 mb-5">Please enter your login and password!</p>
-                @error('email')
-                        {{ $message }}
-                @enderror
-                @error('password')
-                        {{ $message }}
-                @enderror
+                 <p class="text-white-50 mb-5">Please enter your login and password!</p>  
               <form action="/login" method="post">
                 @csrf
-                 <div class="form-outline form-white mb-4">
-                   <input type="email" id="typeEmailX" class="form-control form-control-lg" name="email"/>
+                 <div class="form-outline form-white mb-4">  
+                    @error('email')
+                     <div class="alert alert-danger" role="alert">
+                       {{ $message }}
+                     </div>
+                    @enderror
+                    <input type="email" id="typeEmailX" class="form-control form-control-lg" name="email" value="alin@email.com"/>
                    <label class="form-label" for="typeEmailX">Email</label>
-                 </div>
-
+                 </div> 
                  <div class="form-outline form-white mb-4">
-                   <input type="password" id="typePasswordX" class="form-control form-control-lg" name="password" />
+                    @error('password')
+                     <div class="alert alert-danger" role="alert">
+                       {{ $message }}
+                     </div>
+                    @enderror
+                   <input type="password" id="typePasswordX" class="form-control form-control-lg" name="password" value="123"/>
                    <label class="form-label" for="typePasswordX">Password</label>
                  </div>
 

@@ -63,15 +63,15 @@ use App\Http\Controllers\UserController;
   Route::get('/profile/deleteWidget', [WidgetController::class, 'delete']);
 
   Route::get('/post/delete', [PostController::class, 'delete']);
-  
+
   Route::get('/show_user', [UserController::class, 'show']);
-  
+
   Route::get('/article', [ContentController::class, 'showArticle']);
 
   Route::post('/post/create', [PostController::class, 'create']);
 
   Route::post('/comments/create', [CommentController::class, 'create']);
-   
+
   Route::post('/comments/store', [CommentController::class, 'store']);
 
   Route::post('/product/create', [ProductController::class, 'create']);
@@ -79,5 +79,5 @@ use App\Http\Controllers\UserController;
   Route::post('/contact/sendMail', [MailController::class, 'send']);
 
   Route::post('/search', [ContentController::class, 'search']);
- 
+
 require 'auth.php';

@@ -1,10 +1,14 @@
-<?php 
+<?php
+error_reporting(E_ALL);
+ini_set('error_reporting', E_ALL);
+ini_set("display_errors", 1);
+
 header('Access-Control-Allow-Origin: http://localhost:3000');
 use Illuminate\Contracts\Http\Kernel;
-use Illuminate\Http\Request; 
+use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
- 
+
 /*
 |--------------------------------------------------------------------------
 | Check If The Application Is Under Maintenance
@@ -47,7 +51,7 @@ require __DIR__.'/laravel/vendor/autoload.php';
 $app = require_once __DIR__.'/laravel/bootstrap/app.php';
 
 $kernel = $app->make(Kernel::class);
- 
+
 $response = $kernel->handle(
     $request = Request::capture()
 )->send();

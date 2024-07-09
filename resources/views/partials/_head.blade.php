@@ -28,6 +28,10 @@
        --background-color: #343a40;
        --color: white; 
     }
+    .navbar
+    {
+       background-color: var(--background-color);
+    } 
     body
     {
        background-color: var(--background-color);
